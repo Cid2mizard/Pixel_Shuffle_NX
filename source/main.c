@@ -291,7 +291,7 @@ Uint32 obtenirPixel(SDL_Surface *surface, int x, int y)
     /*surface->pixels contient l'adresse du premier pixel de l'image*/
     Uint8 *p = (Uint8 *)surface->pixels + y * surface->pitch + x * nbOctetsParPixel;
 
-    /*Gestion différente suivant le nombre d'octets par pixel de l'image*/
+    /*Gestion diffÃ©rente suivant le nombre d'octets par pixel de l'image*/
     switch(nbOctetsParPixel)
     {
         case 1:
@@ -310,7 +310,7 @@ Uint32 obtenirPixel(SDL_Surface *surface, int x, int y)
         case 4:
             return *(Uint32 *)p;
 
-        /*Ne devrait pas arriver, mais évite les erreurs*/
+        /*Ne devrait pas arriver, mais Ã©vite les erreurs*/
         default:
             return 0; 
     }
@@ -572,7 +572,7 @@ void ManageInput()
 			//On change la selection dans le tableau
 			Level[Selected].selected = true;
 
-			//Si l'ancienne correspond à la nouvelle et level débloqué
+			//Si l'ancienne correspond Ã  la nouvelle et level dÃ©bloquÃ©
 			if ((Old_selected == Selected) && (Level[Selected].unlocked))
 			{
 				//On lance le jeu
@@ -617,7 +617,7 @@ void ManageInput()
 			{
 				held_mode = true;
 
-				//Si plus à sa place (avant)
+				//Si plus Ã  sa place (avant)
 				if ((Stylus.px-540)/48 < select_colonne)
 				{
 					number_colonne = select_colonne - (Stylus.px-540)/48;
@@ -640,7 +640,7 @@ void ManageInput()
 					//maj select
 					select_colonne = (Stylus.px-540)/48;
 				}
-				//Si plus à sa place (devant)
+				//Si plus Ã  sa place (devant)
 				else if ((Stylus.px-540)/48 > select_colonne)
 				{
 					number_colonne = (Stylus.px-540)/48 - select_colonne;
@@ -649,7 +649,7 @@ void ManageInput()
 					{
 						for (lignes = 0; lignes < 15; lignes++)
 						{
-							//Save la ligne précédente
+							//Save la ligne prÃ©cÃ©dente
 							temp_colonne[lignes] = level_courant[select_colonne + i + lignes * 15];
 
 							//ligne suivante devient select
@@ -875,7 +875,7 @@ void printGame()
 	}
 
 	//REFRESH
-    SDL_RenderPresent(renderer);
+    	SDL_RenderPresent(renderer);
 }
 
 int main(int argc, char **argv)
@@ -908,7 +908,7 @@ int main(int argc, char **argv)
 
 	// Create an SDL window & renderer
 	window = SDL_CreateWindow("Main-Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 0, 0, SDL_WINDOW_FULLSCREEN_DESKTOP);
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
+    	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
 	SDL_SetRenderDrawBlendMode(renderer,SDL_BLENDMODE_BLEND);
 
 	// Font loading
